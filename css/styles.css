@@ -122,12 +122,14 @@ address {
 }
 .header-nav {
   display: flex;
-  /* align-items: center; */
   justify-content: space-between;
 }
 .site-nav {
   display: flex;
   align-items: center;
+}
+.site-nav-item {
+  position: relative;
 }
 .site-nav-item + .site-nav-item {
   margin-left: 40px;
@@ -165,7 +167,6 @@ address {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
-
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -179,7 +180,7 @@ address {
   color: var(--acent-text-color);
 }
 
-.site-nav-link.current {
+.current {
   color: var(--acent-text-color);
 }
 
@@ -278,14 +279,34 @@ address {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-/* work-list Flexbox */
+
+/* Work-list Flexbox */
+.work-container {
+  padding-top: 0;
+}
+
 .work-list {
   display: flex;
   justify-content: space-between;
 }
 
-.work-container {
-  padding-top: 0;
+.work-item {
+  position: relative;
+}
+.work-title {
+  width: 100%;
+  color: var(--withe-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  position: absolute;
+  bottom: 0;
 }
 
 /* Team Flexbox */
