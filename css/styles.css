@@ -107,7 +107,6 @@ address {
 }
 
 .container {
-  /* outline: 2px solid tomato; */
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
@@ -164,15 +163,21 @@ address {
 }
 
 .site-nav-link {
-  display: flex;
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
+
   color: var(--title-text-color);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav-link:hover,
@@ -180,14 +185,12 @@ address {
   color: var(--acent-text-color);
 }
 
-.current {
-  color: var(--acent-text-color);
-}
 .current::after {
   content: '';
 
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -210,6 +213,10 @@ address {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
@@ -437,6 +444,10 @@ address {
   border-radius: 50%;
 
   fill: var(--link-icon-color);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-link:hover,
@@ -466,6 +477,10 @@ address {
   width: 100%;
   height: 100%;
   border-radius: 4px;
+
+  transition-property: fill, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clientage-link:hover,
@@ -511,12 +526,17 @@ address {
   line-height: 1.71;
   text-decoration: none;
   letter-spacing: 0.03em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adds-link-map:hover,
 .adds-link-map:focus {
   color: var(--acent-text-color);
 }
+
 .adds-link {
   color: var(--link-footer-color);
   font-style: normal;
@@ -524,6 +544,10 @@ address {
   line-height: 1.71;
   text-decoration: none;
   letter-spacing: 0.03em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adds-link:hover,
 .adds-link:focus {
@@ -558,6 +582,10 @@ address {
   border-radius: 50%;
   background-color: var(--footer-icon-bg-color);
   fill: var(--footer-icon-color);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-link:hover,
@@ -590,6 +618,10 @@ address {
   padding: 10px 24px;
   text-align: center;
   border-radius: 4px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.primary:hover,
@@ -610,6 +642,10 @@ address {
   padding: 6px 22px;
   text-align: center;
   border-radius: 4px;
+
+  transition-property: color, box-shadow, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.content:hover,
@@ -625,6 +661,10 @@ address {
 .project-item-link {
   display: block;
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-item-link:hover,
 .project-item-link:focus {
@@ -671,20 +711,30 @@ address {
   padding: 20px 24px;
 }
 
-.box {
+.project-img {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
-.box:hover .overlay {
-  transform: translatey(0);
-}
-.overlay {
+.project-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 64px 24px;
 
-  transform: translatey(100%);
-  transition: transform 250ms ease;
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+
+  color: var(--withe-text-color);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.project-item:hover .project-overlay {
+  transform: translateY(0);
 }
