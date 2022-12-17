@@ -184,6 +184,9 @@ address {
 .site-nav-link:focus {
   color: var(--acent-text-color);
 }
+.current {
+  color: var(--acent-text-color);
+}
 
 .current::after {
   content: '';
@@ -433,7 +436,7 @@ address {
 .clientage-link:hover,
 .clientage-link:focus {
   fill: var(--acent-text-color);
-  border: 1px solid var(--acent-text-color);
+  border-color: var(--acent-text-color);
 }
 
 /* Footer */
@@ -737,6 +740,7 @@ address {
   justify-content: center;
 
   border-radius: 50%;
+  cursor: pointer;
   background: var(--footer-icon-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
 
